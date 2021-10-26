@@ -41,19 +41,19 @@ $ mkdir trimmed_multiqc1
 $ multiqc -o trimmed_multiqc1 trimmed_fastqc
 ```
 До:
-![alt](./pictures/stat_1.png)
+![alt](./pictures/stat1.png)
 После:
-![alt](./pictures/stat_2.png)
+![alt](./pictures/stat2.png)
 
 До:
-![alt](./pictures/mean_1.png)
+![alt](./pictures/mean1.png)
 После:
-![alt](./pictures/mean_2.png)
+![alt](./pictures/mean2.png)
 
 До:
-![alt](./pictures/adapter_1.png)
+![alt](./pictures/adapter1.png)
 После:
-![alt](./pictures/adapter_2.png)
+![alt](./pictures/adapter2.png)
 ```
 7) Собираем контиги после подрезанных чтений:
 ```
