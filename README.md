@@ -57,7 +57,7 @@ $ multiqc -o trimmed_multiqc1 trimmed_fastqc
 
 После:
 ![alt](./pictures/adapter2.jpg)
-```
+
 7) Собираем контиги после подрезанных чтений:
 ```
 $ time platanus assemble -o Poil -f trimmed_fastq1/pe_R1.fastq.trimmed trimmed_f                                                                             astq1/pe_R2.fastq.trimmed 2> assemble.log
