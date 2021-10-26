@@ -29,8 +29,6 @@ $ mkdir hw1
 $ cd hw1
 $ mkdir 1
 $ cd 1
-$ ls -1 /usr/share/data-minor-bionf/assembly/* | xargs -tI{} ln -s{}
-ls: cannot access '/usr/share/data-minor-bionf/assembly/*': No such file or dire                                                                             ctory
 $ ls -1 /usr/share/data-minor-bioinf/assembly/* | xargs -tI{} ln -s {}
 ln -s /usr/share/data-minor-bioinf/assembly/oilMP_S4_L001_R1_001.fastq
 ln -s /usr/share/data-minor-bioinf/assembly/oilMP_S4_L001_R2_001.fastq
@@ -304,14 +302,6 @@ VmPeak:           0.181 GByte
 VmHWM:            0.161 GByte
 Execution time:      1.13 min
 
-$ mkdir trimmed_fastq
-$ mv -v *trimmed_fastq/
-mv: missing destination file operand after 'trimmed_fastq/'
-Try 'mv --help' for more information.
-$ ls trimmed_fastq/* | xargs -P 4 -tI{} fastqc -o trimmed_fastqc {}
-ls: cannot access 'trimmed_fastq/*': No such file or directory
-$ mkdir trimmed_fastq
-mkdir: cannot create directory ‘trimmed_fastq’: File exists
 $ mkdir trimmed_fastq1
 $ mv -v *trimmed trimmed_fastq1/
 renamed 'mp_R1.fastq.int_trimmed' -> 'trimmed_fastq1/mp_R1.fastq.int_trimmed'
@@ -408,18 +398,6 @@ Approx 90% complete for pe_R1.fastq.trimmed
 Analysis complete for pe_R2.fastq.trimmed
 Approx 95% complete for pe_R1.fastq.trimmed
 Analysis complete for pe_R1.fastq.trimmed
-mk$ mkdir trimmed_multiqc
--sh: 26: $: not found
-$ mkdir trimmed_multiqc
-$ multiqc -o trimmed_multiqc trimmed fastqc
-Usage: multiqc [OPTIONS] <analysis directory>
-
-Error: Invalid value for '<analysis directory>': Path 'trimmed' does not exist.
-
-This is MultiQC v1.10.dev0
-
-For more help, run 'multiqc --help' or visit http://multiqc.info
-
 $ mkdir trimmed_multiqc1
 $ multiqc -o trimmed_multiqc1 trimmed_fastqc
 [WARNING]         multiqc : MultiQC Version v1.11 now available!
@@ -431,53 +409,4 @@ $ multiqc -o trimmed_multiqc1 trimmed_fastqc
 [INFO   ]         multiqc : Report      : trimmed_multiqc1/multiqc_report.html
 [INFO   ]         multiqc : Data        : trimmed_multiqc1/multiqc_data
 [INFO   ]         multiqc : MultiQC complete
-$ mkdir otchet
-$ mv multiqc otchet
-$ mv trimmed_multiqc1 otchet
-$ mv fastqc otchet
-$ mv trimmed_fastqc otchet
-$ tar -cvzf shagaeva.tar.gz otchet
-otchet/
-otchet/trimmed_multiqc1/
-otchet/trimmed_multiqc1/multiqc_data/
-otchet/trimmed_multiqc1/multiqc_data/multiqc_fastqc.txt
-otchet/trimmed_multiqc1/multiqc_data/multiqc_general_stats.txt
-otchet/trimmed_multiqc1/multiqc_data/multiqc_data.json
-otchet/trimmed_multiqc1/multiqc_data/multiqc_sources.txt
-otchet/trimmed_multiqc1/multiqc_data/multiqc.log
-otchet/trimmed_multiqc1/multiqc_report.html
-otchet/trimmed_fastqc/
-otchet/trimmed_fastqc/pe_R2.fastq.trimmed_fastqc.zip
-otchet/trimmed_fastqc/mp_R1.fastq.int_trimmed_fastqc.zip
-otchet/trimmed_fastqc/pe_R1.fastq.trimmed_fastqc.zip
-otchet/trimmed_fastqc/mp_R2.fastq.int_trimmed_fastqc.zip
-otchet/trimmed_fastqc/mp_R2.fastq.int_trimmed_fastqc.html
-otchet/trimmed_fastqc/mp_R1.fastq.int_trimmed_fastqc.html
-otchet/trimmed_fastqc/pe_R1.fastq.trimmed_fastqc.html
-otchet/trimmed_fastqc/pe_R2.fastq.trimmed_fastqc.html
-otchet/fastqc/
-otchet/fastqc/mp_R2_fastqc.zip
-otchet/fastqc/mp_R1_fastqc.zip
-otchet/fastqc/pe_R1_fastqc.html
-otchet/fastqc/oilMP_S4_L001_R1_001_fastqc.zip
-otchet/fastqc/mp_R1_fastqc.html
-otchet/fastqc/oil_R1_fastqc.html
-otchet/fastqc/pe_R2_fastqc.html
-otchet/fastqc/oilMP_S4_L001_R2_001_fastqc.html
-otchet/fastqc/oilMP_S4_L001_R2_001_fastqc.zip
-otchet/fastqc/oil_R2_fastqc.zip
-otchet/fastqc/oil_R2_fastqc.html
-otchet/fastqc/mp_R2_fastqc.html
-otchet/fastqc/oilMP_S4_L001_R1_001_fastqc.html
-otchet/fastqc/pe_R2_fastqc.zip
-otchet/fastqc/oil_R1_fastqc.zip
-otchet/fastqc/pe_R1_fastqc.zip
-otchet/multiqc/
-otchet/multiqc/multiqc_data/
-otchet/multiqc/multiqc_data/multiqc_fastqc.txt
-otchet/multiqc/multiqc_data/multiqc_general_stats.txt
-otchet/multiqc/multiqc_data/multiqc_data.json
-otchet/multiqc/multiqc_data/multiqc_sources.txt
-otchet/multiqc/multiqc_data/multiqc.log
-otchet/multiqc/multiqc_report.html
-$
+
