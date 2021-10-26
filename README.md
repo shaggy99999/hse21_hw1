@@ -409,4 +409,16 @@ $ multiqc -o trimmed_multiqc1 trimmed_fastqc
 [INFO   ]         multiqc : Report      : trimmed_multiqc1/multiqc_report.html
 [INFO   ]         multiqc : Data        : trimmed_multiqc1/multiqc_data
 [INFO   ]         multiqc : MultiQC complete
-
+$ time platanus assemble -o Poil -f trimmed_fastq1/pe_R1.fastq.trimmed trimmed_f                                                                             astq1/pe_R2.fastq.trimmed 2> assemble.log
+$ head Poil_contig.fa
+>seq1_len87_cov320
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAA
+>seq2_len142_cov3236
+AACCGCTATTAAGACCCGCTTTTTCGATATTGCTAAAATCAATTCCGGCACCATTTAGTGCATTGGTTCCGGTAAGTTTT
+GCAGCGACTGTGATATCAGATGTGATCTCGTCAGCATCACCGGCACCTGCATCCACCGAGGC
+>seq3_len89250_cov219
+AACTTCTGCCAGCGAGCCGCCGCAAGAAGGTGATTGGTGTGGCGGAAGTCGAGCAGGTTGTTGCGGCTATTGCTCGCATT
+CCACCTAAGTCGGTATCGTCGTCCGATAAAGAATTGCTCTTCAAGCTTGAAGATAAGTTGCAGATGGTTGTGTTTGGCCA
+AGATGAAGCCATTCAAACGCTCTCTACCGCGATCAAGATGTCGAGAGCAGGCCTTAGTGCTCCCCAGAAGCCGATAGGAT
+$ time platanus scaffold -o Poil -c Poil_contig.fa -IP1 trimmed_fastq1/pe_R1.fastq.trimmed trimmed_fastq1/pe_R2.fastq.trimmed -OP2 trimmed_fastq1/mp_R1.fastq.int_trimmed trimmed_fastq/mp_R2.fastq.int_trimmed 2> scaffold.log
