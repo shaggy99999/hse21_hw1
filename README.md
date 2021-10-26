@@ -67,3 +67,18 @@ $ head Poil_contig.fa
 ```
 $ time platanus scaffold -o Poil -c Poil_contig.fa -IP1 trimmed_fastq1/pe_R1.fastq.trimmed trimmed_fastq1/pe_R2.fastq.trimmed -OP2 trimmed_fastq1/mp_R1.fastq.int_trimmed trimmed_fastq/mp_R2.fastq.int_trimmed 2> scaffold.log
 ```
+9) Выделим в отдельный файл самый длинный скаффолд:
+```
+$ echo scaffold1_len3834754_cov231 > _tmp.txt
+$ seqtk subseq Poil_scaffold.fa _tmp.txt > scaffold1_len3832152_cov231.fasta
+```
+10) Уменьшим количество гэпов при помощи подрезанных частей:
+```
+$ time platanus gap_close -o Poil -t 1 -c Poil_scaffold.fa -IP1 trimmed_fastq1/pe_R1.fastq.trimmed trimmed_fastq1/pe_R2.fastq.trimmed -OP2 trimmed_fastq1/mp_R1.fastq.int-trimmed trimmed_fastq1/mp_R2.fastq.int_trimmed 2> gapclose.log
+
+```
+11) Выделяем новый скаффолд в отдельный файл
+```
+echo scaffold1_cov231 > _tmp.txt
+seqtk subseq Poil_gapclose.fa _tmp.txt > oil_genome.fna
+```
