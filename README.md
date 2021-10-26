@@ -41,14 +41,14 @@ $ mkdir trimmed_multiqc1
 $ multiqc -o trimmed_multiqc1 trimmed_fastqc
 ```
 До:
-![alt](./pictures/stat1.png)
+![alt](./pictures/stat1.jpg)
 После:
-![alt](./pictures/stat2.png)
+![alt](./pictures/stat2.jpg)
 
 До:
-![alt](./pictures/mean1.png)
+![alt](./pictures/mean1.jpg)
 После:
-![alt](./pictures/mean2.png)
+![alt](./pictures/mean2.jpg)
 
 До:
 ![alt](./pictures/adapter1.png)
