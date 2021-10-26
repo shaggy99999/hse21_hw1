@@ -1,11 +1,14 @@
 # hse21_hw1
-
+1) Создаем папку с домашним заданием и ссылки в личной папке:
+```
 $ mkdir hw1
 $ cd hw1
 $ mkdir 1
 $ cd 1
 $ ls -1 /usr/share/data-minor-bioinf/assembly/* | xargs -tI{} ln -s {}
 
+2) Делаем случайные чтения:
+```
 $ seqtk sample -s1607 oil_R1.fastq 5000000 > pe_R1.fastq
 $ seqtk sample -s1607 oil_R2.fastq 5000000 > pe_R2.fastq
 $ seqtk sample -s1607 oilMP_S4_L001_R1_001.fastq 1500000 > mp_R1.fastq
