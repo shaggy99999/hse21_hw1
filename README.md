@@ -42,18 +42,21 @@ $ multiqc -o trimmed_multiqc1 trimmed_fastqc
 ```
 До:
 ![alt](./pictures/stat1.jpg)
+
 После:
 ![alt](./pictures/stat2.jpg)
 
 До:
 ![alt](./pictures/mean1.jpg)
+
 После:
 ![alt](./pictures/mean2.jpg)
 
 До:
-![alt](./pictures/adapter1.png)
+![alt](./pictures/adapter1.jpg)
+
 После:
-![alt](./pictures/adapter2.png)
+![alt](./pictures/adapter2.jpg)
 ```
 7) Собираем контиги после подрезанных чтений:
 ```
