@@ -1,0 +1,68 @@
+f = open("contig.fa", "r")
+count = 0
+lenth = 0
+all_ctg = []
+for i in f.readlines():
+    if i[0] == '>':
+        count += 1
+        index_len = i.find('len')+3
+        lenth += int(i[index_len : i.find('_', index_len)])
+        all_ctg.append(int(i[index_len : i.find('_', index_len)]))
+all_ctg.sort(reverse = True)
+print("Общее количество контигов:", count)
+print("Общая длина контигов:", lenth)
+print("Длина самого длинного контига:", all_ctg[0])
+s = 0
+for i in all_ctg:
+    s += i
+    if (s >= (lenth/2)):
+        print("N50:", i)
+        break
+Общее количество контигов: 613
+Общая длина контигов: 3924589
+Длина самого длинного контига: 179304
+N50: 55172
+
+
+
+
+import re
+f = open("scaffolds(gapclosed).fa", "r")
+count = 0
+longstr = f.read()
+res = re.findall(r'(N+)', longstr)
+print('Количество:', len(res))
+for i in res:
+    count += len(i)
+print('Общая длина:', count)
+Количество: 39
+Общая длина: 2420
+
+
+
+
+
+f = open("longest.fa", "r")
+count = 0
+lenth = 0
+all_ctg = []
+for i in f.readlines():
+    if i[0] == '>':
+        count += 1
+        index_len = i.find('len')+3
+        lenth += int(i[index_len : i.find('_', index_len)])
+        all_ctg.append(int(i[index_len : i.find('_', index_len)]))
+all_ctg.sort(reverse = True)
+print("Общее количество скаффолдов:", count)
+print("Общая длина скаффолдов:", lenth)
+print("Длина самого длинного скаффолдов:", all_ctg[0])
+s = 0
+for i in all_ctg:
+    s += i
+    if (s >= (lenth/2)):
+        print("N50:", i)
+        break
+Общее количество скаффолдов: 1
+Общая длина скаффолдов: 3834754
+Длина самого длинного скаффолдов: 3834754
+N50: 3834754
